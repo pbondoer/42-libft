@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbondoer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:39:03 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/25 22:49:59 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/11/25 22:27:35 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/11/25 23:32:15 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t i;
 
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		b[i] = (unsigned char)c;
+		dst[i] = src[i];
 		i++;
 	}
-	return (b);
+	return (dst);
 }

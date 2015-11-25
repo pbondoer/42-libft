@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbondoer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:39:03 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/25 22:49:59 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/11/25 23:19:39 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/11/25 23:32:02 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t i;
+	unsigned char	cc;
+	int				i;
 
+	cc = (unsigned char)c;
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		b[i] = (unsigned char)c;
+		if (s[i] == cc)
+			return (s[i]);
 		i++;
 	}
-	return (b);
+	return (NULL);
 }

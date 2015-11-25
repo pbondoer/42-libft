@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbondoer <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 20:39:03 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/25 22:49:59 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/11/25 23:09:02 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/11/25 23:18:24 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t i;
 
-	i = 0;
-	while (i < len)
+	if (src < dst)
 	{
-		b[i] = (unsigned char)c;
-		i++;
+		i = len - 1;
+		while (i > 0)
+		{
+			dst[i] = src[i];
+			i--;
+		}
 	}
-	return (b);
+	else
+	{
+		i = 0;
+		while (i < len)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	}
+	return (dst);
 }
