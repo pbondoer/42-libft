@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 22:27:35 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/25 23:32:15 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/11/26 16:58:52 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
-
-	i = 0;
-	while (i < n)
+	while (n > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		n--;
+		dst[n] = src[n];
 	}
 	return (dst);
 }
