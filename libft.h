@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 02:52:34 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/02 04:12:56 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,18 @@ int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *str);
 
-//void	*ft_memalloc(size_t size);
-//void	ft_memdel(void **ap);
-//char	*ft_strnew(size_t size);
-//void	ft_strdel(char **as);
-//void	ft_strclr(char *s);
-//void	ft_striter(char *s, void (*f)(char *));
-//void	ft_striteri(char *s, void (*f)(unsigned int, char *));
-//char	*ft_strmap(char const *s, char (*f)(char));
-//char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-//int		ft_strequ(char const *s1, char const *s2);
-//int		ft_strnequ(char const *s1, char const *s2, size_t n);
-//char	*ft_strsub(char const *s, unsigned int start, size_t len);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
 //char	*ft_strjoin(char const *s1, char const *s2);
 //char	*ft_strtrim(char const *s);
 //char	**ft_strsplit(char const *s, char c);
@@ -71,5 +71,6 @@ int		ft_atoi(const char *str);
 // + bonus
 
 int		ft_min(int a, int b);
+int		ft_max(int a, int b);
 int		ft_iswhitespace(char c);
 #endif
