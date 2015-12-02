@@ -6,15 +6,15 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 03:22:29 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 03:39:53 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/02 18:59:41 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_strdel(char **as)
+void	ft_strclr(char *as)
 {
-	while (**as)
+	while (*as)
 	{
-		**as = 0;
-		(*as)++;
+		*as = 0;
+		as++;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 04:12:56 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/02 18:47:05 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,22 +55,23 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
-//char	*ft_strjoin(char const *s1, char const *s2);
-//char	*ft_strtrim(char const *s);
-//char	**ft_strsplit(char const *s, char c);
-//char	*ft_itoa(int n);
-//void	ft_putchar(char c);
-//void	ft_putstr(char const *s);
-//void	ft_putendl(char const *s);
-//void	ft_putnbr(int n);
-//void	ft_putchar_fd(char c, int fd);
-//void	ft_putstr_fd(char const *s, int fd);
-//void	ft_putendl_fd(char const *s, int fd);
-//void	ft_putnbr_fd(int n, int fd);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putendl(char const *s);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 // + bonus
 
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
 int		ft_iswhitespace(char c);
+size_t	ft_countwords(char *str, char c);
 #endif

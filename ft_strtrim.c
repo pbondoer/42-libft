@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 03:09:03 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 18:52:24 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/02 17:21:32 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/02 18:53:26 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-void	*ft_memalloc(size_t size)
+char	*ft_strtrim(char const *s)
 {
-	void *ptr;
+	size_t	start;
+	size_t	end;
+	char	*new;
 
-	ptr = malloc(size);
-	if (ptr == NULL)
+	start = 0;
+	end = ft_strlen(s);
+	while (ft_iswhitespace(s[start]))
+		start++;
+	while (ft_iswhitespace(s[end - 1]))
+		end--;
+	if (end < start)
+		end = start;
+	new = ft_strnew(end - start);
+	if (new == NULL)
 		return (NULL);
-	ft_bzero(ptr, size);
-	return (ptr);
+	return (ft_strncpy(new, s + start, end - start));
 }
