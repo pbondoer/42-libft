@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:45:57 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/01 22:04:15 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/02 00:32:11 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/02 02:36:52 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
-size_t	ft_strlen(const char *s)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
+	size_t j;
 
+	if (*s2 == 0)
+		return ((char *)s1);
 	i = 0;
-	while (s[i])
+	while (s1[i] && i < n)
+	{
+		j = 0;
+		while (s1[i] && i < n && s2[j] && j < n && s1[i] == s2[j])
+		{
+			j++;
+			i++;
+		}
+		if (s2[j] == 0)
+			return ((char *)(s1 + i - j));
+		i -= j;
 		i++;
-	return (i);
+	}
+	return (NULL);
 }

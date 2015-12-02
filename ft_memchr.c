@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 23:19:39 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/25 23:32:02 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/02 02:52:36 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	cc;
-	int				i;
+	size_t			i;
 
-	cc = (unsigned char)c;
 	i = 0;
 	while (i < n)
 	{
-		if (s[i] == cc)
-			return (s[i]);
+		if (((unsigned char *)s)[i] == (unsigned char)c)
+			return (((void *)s + i));
 		i++;
 	}
 	return (NULL);

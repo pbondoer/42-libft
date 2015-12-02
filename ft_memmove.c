@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 23:09:02 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/11/26 17:17:12 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/02 01:24:12 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (src < dst)
 	{
-		i = len - 1;
+		i = len;
 		while (i > 0)
 		{
-			dst[i] = src[i];
 			i--;
+			((char *)dst)[i] = ((char *)src)[i];
 		}
 	}
 	else
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i = 0;
 		while (i < len)
 		{
-			dst[i] = src[i];
+			((char *)dst)[i] = ((char *)src)[i];
 			i++;
 		}
 	}

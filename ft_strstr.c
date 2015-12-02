@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:45:57 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/01 22:04:15 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/02 00:41:10 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/02 00:42:21 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
-size_t	ft_strlen(const char *s)
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	return (ft_strnstr(s1, s2, ft_strlen(s1)));
 }

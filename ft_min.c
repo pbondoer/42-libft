@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_min.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:45:57 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/01 22:04:15 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/02 00:53:42 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/02 00:54:32 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-
-size_t	ft_strlen(const char *s)
+int		ft_min(int a, int b)
 {
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (a < b)
+		return (a);
+	return (b);
 }

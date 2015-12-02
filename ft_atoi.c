@@ -1,23 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 14:45:57 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/01 22:04:15 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/02 01:05:06 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/02 02:56:28 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_atoi(const char *str)
 {
-	size_t i;
+	int		nbr;
+	char	neg;
+	int		i;
 
 	i = 0;
-	while (s[i])
+	while (ft_iswhitespace(str[i]))
 		i++;
-	return (i);
+	neg = (str[i] == '-');
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	nbr = 0;
+	while (ft_isdigit(str[i]))
+	{
+		nbr = nbr * 10 + (str[i] - '0');
+		i++;
+	}
+	return (neg ? -nbr : nbr);
 }
