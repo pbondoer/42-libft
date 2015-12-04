@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 18:32:07 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 19:45:49 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/03 23:29:54 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char			*ft_itoa(int n)
 	long	v;
 	size_t	count;
 	char	*str;
-	size_t	neg;
+	char	neg;
 
 	v = n;
 	neg = (v < 0 ? 1 : 0);

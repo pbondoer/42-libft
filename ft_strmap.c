@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 03:27:55 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 03:41:50 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/04 03:10:08 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ char	*ft_strmap(const char *s, char (*f)(char))
 	new = ft_strnew(ft_strlen(s));
 	if (new == NULL)
 		return (NULL);
-	while (*s)
+	while (s[i])
 	{
-		new[i] = (*f)(*s);
-		s++;
+		new[i] = (*f)(s[i]);
 		i++;
 	}
 	return (new);

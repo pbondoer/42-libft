@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 17:21:32 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/04 03:11:38 by pbondoer         ###   ########.fr       */
+/*   Created: 2015/12/04 00:50:29 by pbondoer          #+#    #+#             */
+/*   Updated: 2015/12/04 01:35:33 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strtrim(char const *s)
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	size_t	start;
-	size_t	end;
-	char	*new;
-
-	start = 0;
-	end = ft_strlen(s);
-	while (ft_iswhitespace(s[start]))
-		start++;
-	while (ft_iswhitespace(s[end - 1]))
-		end--;
-	if (end < start)
-		end = start;
-	new = ft_strnew(end - start);
-	if (new == NULL)
-		return (NULL);
-	return (ft_strncpy(new, s + start, end - start));
+	(*f)(lst);
+	while (lst->next)
+	{
+		lst = lst->next;
+		(*f)(lst);
+	}
 }

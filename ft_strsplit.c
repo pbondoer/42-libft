@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 17:28:42 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 19:45:26 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/04 03:35:15 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ static char		*next_word(char const *s, char c)
 	return ((char *)s);
 }
 
+static void		cleanup(char **split, size_t cur)
+{
+	while (cur > 0)
+	{
+		cur--;
+		ft_strdel(&split[cur]);
+	}
+	ft_strdel(split);
+}
+
 char			**ft_strsplit(char const *s, char c)
 {
 	char	**split;
@@ -46,7 +56,10 @@ char			**ft_strsplit(char const *s, char c)
 		s = next_word(s, c);
 		split[cur] = ft_strsub(s, 0, word_len(s, c));
 		if (split[cur] == NULL)
+		{
+			cleanup(split, cur);
 			return (NULL);
+		}
 		cur++;
 		s += word_len(s, c);
 	}
