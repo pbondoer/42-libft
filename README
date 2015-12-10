@@ -1,0 +1,18 @@
+# libft @ 42
+
+This is the libft project for 42. It consists in recreating various functions
+from the standard C library as well as some extra useful functions into our
+own libft.
+
+## Compiling
+
+Run `make` to compile all .c sources into a `libft.a`. To use it in your
+project with gcc: `gcc (files) -L. -lft -I.`.
+
+## For 42 students
+
+Hey, don't copy code if you don't understand it. Some of it might even be
+wrong! If you want to chat, I'm usually available through our Slack team. You
+can find me with my GitHub username/42 login :)!
+
+**Good luck and thanks for all the fish!**
