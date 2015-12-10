@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 00:32:11 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 02:36:52 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/07 20:52:42 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	while (s1[i] && i < n)
 	{
 		j = 0;
-		while (s1[i] && i < n && s2[j] && j < n && s1[i] == s2[j])
+		while (s1[i] && i < n && s2[j] && s1[i] == s2[j])
 		{
 			j++;
 			i++;
