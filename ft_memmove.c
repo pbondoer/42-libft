@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 23:09:02 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/11 21:05:19 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/11 21:16:48 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	size_t i;
 
 	if (dst == NULL || src == NULL || len == 0)
-		return (NULL);
+		return (dst);
 	if (src < dst)
 	{
 		i = len;
