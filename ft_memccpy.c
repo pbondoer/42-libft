@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 22:48:36 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/07 20:36:32 by pbondoer         ###   ########.fr       */
+/*   Updated: 2015/12/11 22:08:11 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	cc;
+	unsigned char	uc;
+	unsigned char	*dst_uc;
+	unsigned char	*src_uc;
 
 	i = 0;
-	cc = (unsigned char)c;
+	uc = (unsigned char)c;
+	dst_uc = (unsigned char *)dst;
+	src_uc = (unsigned char *)src;
 	while (i < n)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
+		if ((src_uc[i] = dst_uc[i]) == uc)
+			return (&dst_uc[i + 1]);
 		i++;
-		if (((unsigned char *)dst)[i - 1] == cc)
-			return (&dst[i]);
 	}
 	return (NULL);
 }
