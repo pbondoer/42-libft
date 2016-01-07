@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 00:15:37 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/11 22:54:06 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 00:48:52 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if ((char)c == 0)
+	if ((char)c == '\0')
 		return ((char *)s);
 	return (NULL);
 }
