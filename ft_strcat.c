@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:46:37 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/01 21:51:18 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/07 22:09:25 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,16 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	return (ft_strncat(s1, s2, ft_strlen(s2)));
+	int i;
+
+	i = 0;
+	while (s1[i])
+		i++;
+	while (s1[i] && *s2)
+	{
+		s1[i] = *(s2++);
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
 }
