@@ -6,12 +6,12 @@
 #    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/01 21:02:30 by pbondoer          #+#    #+#              #
-#    Updated: 2015/12/07 20:38:03 by pbondoer         ###   ########.fr        #
+#    Updated: 2016/01/07 20:57:34 by pbondoer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
-SRC		= $(shell ls | grep \.c)
+SRC		= $(shell ls | grep -E "ft_.+\.c")
 OBJ		= $(SRC:.c=.o)
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
