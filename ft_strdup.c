@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:53:35 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/04 03:36:19 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/07 21:09:06 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ char	*ft_strdup(const char *s1)
 	s2 = (char *)malloc(sizeof(char) * len);
 	if (s2 == NULL)
 		return (NULL);
-	ft_memcpy(s2, s1, len);
+	ft_strcpy(s2, s1);
 	return (s2);
 }
