@@ -6,23 +6,26 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:18:31 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 01:17:11 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 00:41:32 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
-#include "libft.h"
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t	len;
-	char	*start;
+	int i;
 
-	start = s1 + ft_strlen(s1);
-	len = ft_strlen(s2);
-	if (len > n)
-		len = n;
-	ft_memcpy(start, s2, len);
-	ft_memset(start + len, '\0', 1);
+	i = 0;
+	j = 0;
+	while (s1[i])
+		i++;
+	while (s1[i] && s2[j] && j < n)
+	{
+		s1[i] = s2[j];
+		i++;
+		j++;
+	}
+	s1[i] = '\0';
 	return (s1);
 }
