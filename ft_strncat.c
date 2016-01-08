@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:18:31 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/01/08 01:03:18 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 01:11:55 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	j = 0;
 	while (s1[i])
 		i++;
-	while (s1[i] && s2[j] && j < n)
+	while (s2[j] && j < n)
 	{
 		s1[i] = s2[j];
 		i++;
