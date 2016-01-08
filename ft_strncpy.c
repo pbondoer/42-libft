@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:20:21 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/01/08 00:48:19 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 01:03:36 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (src[i] && i < n)

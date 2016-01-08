@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:18:31 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/01/08 00:41:32 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 01:03:18 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;
