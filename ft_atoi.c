@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 01:05:06 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 02:56:28 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/01/08 01:47:30 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@ int	ft_atoi(const char *str)
 {
 	int		nbr;
 	char	neg;
-	int		i;
 
-	i = 0;
-	while (ft_iswhitespace(str[i]))
-		i++;
-	neg = (str[i] == '-');
-	if (str[i] == '-' || str[i] == '+')
-		i++;
+	while (ft_iswhitespace(*str))
+		str++;
+	neg = (*str == '-');
+	if (*str == '-' || *str == '+')
+		str++;
 	nbr = 0;
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(*str))
 	{
-		nbr = nbr * 10 + (str[i] - '0');
-		i++;
+		nbr = nbr * 10 + (*str - '0');
+		str++;
 	}
 	return (neg ? -nbr : nbr);
 }
