@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 00:20:47 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/02/23 00:34:24 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/02/23 07:51:22 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	strdel(void *str, size_t size)
 {
-	ft_strdel(&str);
+	ft_memdel(&str);
 	(void)size;
 }
 
@@ -25,7 +25,7 @@ int		ft_getlines(int fd, t_list **lst)
 	char	*line;
 	int		ret;
 
-	while (ret = get_next_line(fd, &line))
+	while ((ret = get_next_line(fd, &line)))
 	{
 		ptr = ft_lstnew(line, ft_strlen(line));
 		ft_strdel(&line);
@@ -34,7 +34,7 @@ int		ft_getlines(int fd, t_list **lst)
 			ret = -1;
 			break ;
 		}
-		ft_lstadd(&lst, ptr);
+		ft_lstadd(lst, ptr);
 	}
 	if (ret == -1)
 	{
