@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 00:20:47 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/02/23 07:51:22 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/02/24 13:15:11 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_getlines(int fd, t_list **lst)
 
 	while ((ret = get_next_line(fd, &line)))
 	{
-		ptr = ft_lstnew(line, ft_strlen(line));
+		ptr = ft_lstnew(line, ft_strlen(line) + 1);
 		ft_strdel(&line);
 		if (ptr == NULL)
 		{
