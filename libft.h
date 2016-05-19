@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/02/26 04:33:07 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/05/19 07:41:55 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,7 @@ int				ft_max(int a, int b);
 int				ft_abs(int i);
 int				ft_iswhitespace(char c);
 size_t			ft_countwords(char *str, char c);
+double			ft_lerp(double first, double second, double p);
+double			ft_ilerp(double val, double first, double second);
+int				ft_lerpi(int first, int second, double p);
 #endif
