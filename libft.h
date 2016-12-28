@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/05/19 07:41:55 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/12/28 01:08:51 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void			ft_putnbr_fd(int n, int fd);
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdelfn(void *obj, size_t size);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
@@ -87,8 +88,9 @@ int				ft_min(int a, int b);
 int				ft_max(int a, int b);
 int				ft_abs(int i);
 int				ft_iswhitespace(char c);
-size_t			ft_countwords(char *str, char c);
+int				ft_countwords(char *str, char c);
 double			ft_lerp(double first, double second, double p);
 double			ft_ilerp(double val, double first, double second);
 int				ft_lerpi(int first, int second, double p);
+float			ft_clamp(float i, float a, float b);
 #endif

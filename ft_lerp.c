@@ -6,11 +6,13 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/11 00:34:09 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/05/11 01:16:31 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/12/28 01:09:20 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_lerp(double first, double second, double p)
+double	ft_lerp(double first, double second, double p)
 {
+	if (first == second)
+		return (first);
 	return (first + (second - first) * p);
 }
