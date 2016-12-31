@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/12/28 01:08:51 by pbondoer         ###   ########.fr       */
+/*   Updated: 2016/12/31 06:30:39 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void			ft_lstrev(t_list **alst);
 size_t			ft_lstcount(t_list *lst);
 t_list			*ft_lstat(t_list *lst, size_t val);
+void			ft_lstremove(t_list **alst, void *content);
 int				ft_min(int a, int b);
 int				ft_max(int a, int b);
 int				ft_abs(int i);
