@@ -6,33 +6,42 @@
 #    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/01 21:02:30 by pbondoer          #+#    #+#              #
-#    Updated: 2016/12/28 00:33:25 by pbondoer         ###   ########.fr        #
+#    Updated: 2016/12/31 07:23:48 by pbondoer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
-SRC		= $(shell ls | grep -E "ft_.+\.c") \
-		  get_next_line.c
+include libft.mk
 
-OBJ		= $(SRC:.c=.o)
+SRC_DIR	= ./src
+INC_DIR	= ./includes
+OBJ_DIR	= ./obj
+
+RAW_SRC	:= $(shell find $(SRC_DIR) -type f | grep -E "\.c$$")
+RAW_DIRS:= $(shell find $(SRC_DIR) -type d -mindepth 1)
+SRCDIRS = $(RAW_DIRS:./src/%=%)
+SRC		= $(RAW_SRC:./src/%=%)
+OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-all: $(NAME)
+all: obj $(FT_NAME)
 
-%.o:%.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+obj:
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(addprefix $(OBJ_DIR)/,$(SRCDIRS))
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) $(FT_INC) -o $@ -c $<
+
+$(FT_NAME): $(OBJ)
+	ar rc $(FT_NAME) $(OBJ)
+	ranlib $(FT_NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -f $(FT_NAME)
 
 re: fclean all
-
-test: fclean all fclean
