@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/16 19:11:50 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/02/21 16:48:17 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/02/02 20:30:05 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "get_next_line.h"
 #include <unistd.h>
 
-char	*get_append(t_gnl *gnl)
+static char		*get_append(t_gnl *gnl)
 {
 	int i;
 
@@ -34,7 +34,7 @@ char	*get_append(t_gnl *gnl)
 	return (ft_strsub(gnl->buf, gnl->i - i, i - gnl->nl));
 }
 
-t_gnl	*get_gnl(t_list **lst, int fd)
+static t_gnl	*get_gnl(t_list **lst, int fd)
 {
 	t_gnl	*gnl;
 	t_list	*temp;
@@ -59,7 +59,7 @@ t_gnl	*get_gnl(t_list **lst, int fd)
 	return ((t_gnl *)(temp->content));
 }
 
-void	del_gnl(t_list **lst, int fd, char **str)
+static void		del_gnl(t_list **lst, int fd, char **str)
 {
 	t_gnl	*gnl;
 	t_list	**temp;
@@ -84,7 +84,7 @@ void	del_gnl(t_list **lst, int fd, char **str)
 	ft_strdel(str);
 }
 
-int		read_buffer(t_gnl *gnl, t_list **lst, char **temp, char **line)
+static int		read_buffer(t_gnl *gnl, t_list **lst, char **temp, char **line)
 {
 	if (gnl->i == gnl->count)
 	{
@@ -107,7 +107,7 @@ int		read_buffer(t_gnl *gnl, t_list **lst, char **temp, char **line)
 	return (0);
 }
 
-int		get_next_line(int const fd, char **line)
+int				get_next_line(int const fd, char **line)
 {
 	static t_list	*lst;
 	t_gnl			*gnl;

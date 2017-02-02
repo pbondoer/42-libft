@@ -6,20 +6,20 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/23 00:20:47 by pbondoer          #+#    #+#             */
-/*   Updated: 2016/02/24 13:15:11 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/02/02 20:29:31 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "get_next_line.h"
 
-void	strdel(void *str, size_t size)
+static void		strdel(void *str, size_t size)
 {
 	ft_memdel(&str);
 	(void)size;
 }
 
-int		ft_getlines(int fd, t_list **lst)
+int				ft_getlines(int fd, t_list **lst)
 {
 	t_list	*ptr;
 	char	*line;

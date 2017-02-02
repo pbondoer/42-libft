@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 22:38:35 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/02 01:30:27 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:53:48 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	j = 0;
 	while (dst[i] && i < size)
 		i++;
-	while (src[j] && (i + j) < (size - 1))
+	while (src[j] && (i + j + 1) < size)
 	{
 		dst[i + j] = src[j];
 		j++;

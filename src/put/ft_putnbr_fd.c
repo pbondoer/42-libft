@@ -6,17 +6,28 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 18:45:39 by pbondoer          #+#    #+#             */
-/*   Updated: 2015/12/04 03:45:13 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/02/02 20:09:52 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+inline static void	putlong(long n, int fd)
 {
-	char	*str;
+	if (n >= 10)
+		putlong(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
+}
 
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
-	ft_strdel(&str);
+void				ft_putnbr_fd(int n, int fd)
+{
+	long	v;
+
+	v = n;
+	if (v < 0)
+	{
+		ft_putchar_fd('-', fd);
+		v = -v;
+	}
+	putlong(v, fd);
 }
