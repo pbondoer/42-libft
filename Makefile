@@ -6,7 +6,7 @@
 #    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/01 21:02:30 by pbondoer          #+#    #+#              #
-#    Updated: 2016/12/31 07:23:48 by pbondoer         ###   ########.fr        #
+#    Updated: 2017/02/02 22:15:29 by pbondoer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,13 @@ OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+CFLAGS += -O3 -march=native -pipe
 
-all: obj $(FT_NAME)
+.PHONY: all clean fclean re
 
-obj:
+all: $(OBJ_DIR) $(FT_NAME)
+
+$(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 	mkdir -p $(addprefix $(OBJ_DIR)/,$(SRCDIRS))
 
@@ -44,4 +47,6 @@ clean:
 fclean: clean
 	rm -f $(FT_NAME)
 
-re: fclean all
+re:
+	@$(MAKE) fclean
+	@$(MAKE) all
