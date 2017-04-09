@@ -6,7 +6,7 @@
 #    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/01 21:02:30 by pbondoer          #+#    #+#              #
-#    Updated: 2017/02/03 00:34:04 by pbondoer         ###   ########.fr        #
+#    Updated: 2017/02/11 06:12:18 by pbondoer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ SRC		= $(RAW_SRC:./src/%=%)
 OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
-CFLAGS += -O3 -march=native -pipe
+CFLAGS	= -Wall -Wextra -Werror -pedantic -std=c99
+CFLAGS += -O3 -march=native -pipe -flto
 
 .PHONY: all clean fclean re
 

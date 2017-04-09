@@ -6,7 +6,7 @@
 #    By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/12/31 05:24:55 by pbondoer          #+#    #+#              #
-#    Updated: 2017/02/03 02:58:40 by pbondoer         ###   ########.fr        #
+#    Updated: 2017/02/08 01:47:18 by pbondoer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,6 @@ FT_INC		:= -I $(L_FT)/includes
 FT_LIB		:= $(L_FT)/$(FT_NAME)
 
 # Global variables for compilation
-
 ifndef LIB_LNK
 LIB_LNK		:=
 LIB_INC		:=
