@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2017/02/03 04:06:22 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/12/14 14:17:08 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 int				ft_isdigit(int c);
@@ -94,4 +95,15 @@ double			ft_lerp(double first, double second, double p);
 double			ft_ilerp(double val, double first, double second);
 int				ft_lerpi(int first, int second, double p);
 float			ft_clamp(float i, float a, float b);
+
+void			ft_hsort(void *base, size_t num, size_t size,
+					int (*compar)(const void *, const void *));
+
+{
+typedef struct	s_array
+{
+	void		*ptr;
+	size_t		size;
+size_t		count;
+}				t_array;
 #endif
