@@ -6,12 +6,11 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/14 11:49:53 by pbondoer          #+#    #+#             */
-/*   Updated: 2017/12/14 14:18:12 by pbondoer         ###   ########.fr       */
+/*   Updated: 2017/12/14 14:22:24 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 #include <inttypes.h>
 
 inline void	*elem(t_array a, size_t pos)
