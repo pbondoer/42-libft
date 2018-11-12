@@ -6,7 +6,7 @@
 /*   By: pbondoer <pbondoer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 19:59:25 by pbondoer          #+#    #+#             */
-/*   Updated: 2018/01/24 17:53:17 by pbondoer         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:08:11 by pbondoer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ float			ft_clamp(float i, float a, float b);
 
 void			ft_hsort(void *base, size_t num, size_t size,
 					int (*compar)(const void *, const void *));
+
+int				ft_hash(const char *str);
 
 typedef struct	s_array
 {
